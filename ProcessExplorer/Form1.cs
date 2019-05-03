@@ -47,14 +47,13 @@ namespace ProcessExplorer
                 { }
                 int _threadsCnt = pr.Threads.Count;
 
-                string _filename = "";
+                string _filename = "---";
                 try
                 {
-                    _filename = pr.VirtualMemorySize64.ToString() ;
+                    _filename = pr.MainModule.FileName.ToString() ;
                 }
                 catch
                 { }
-
 
                 Main_DGV.Rows.Add(_id,_hndl,_winhndl,pr.ProcessName, _filename,_ppc.ToString(), _threadsCnt);
             }
